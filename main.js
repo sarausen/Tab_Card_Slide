@@ -33,7 +33,7 @@ async function setActiveCard(ind) {
   targets[ind].classList.add(
     ind < STATE.currentInd ? "slideLeft" : "slideRight"
   );
-  triggerSpec.style.transform = `translateX(${ind}00%)`;
+  triggerSpec.style.transform = `translateX(${ind * 100}%)`;
 
   const prevInd = STATE.currentInd;
   STATE.currentInd = ind;
@@ -43,4 +43,3 @@ async function setActiveCard(ind) {
   targets[STATE.currentInd].classList.add("active");
   targets[ind].classList.remove(ind < prevInd ? "slideLeft" : "slideRight");
 }
-
